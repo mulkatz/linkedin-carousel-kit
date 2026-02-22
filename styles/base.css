@@ -1,0 +1,43 @@
+:root {
+  --color-bg:       #FAF8F5;
+  --color-surface:  #F0EBE3;
+  --color-border:   #D4C5B0;
+  --color-text:     #2C2416;
+  --color-muted:    #6B5436;
+  --color-accent:   #C68B59;
+  --color-heading:  #1A1714;
+
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono:  'JetBrains Mono', monospace;
+}
+
+/* All slides: vertically center content, generous padding */
+.slidev-layout {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 4.5rem !important;
+}
+
+/* Subtle decorative accent line at top of every slide */
+.slidev-layout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4.5rem;
+  right: 4.5rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+}
+
+/* Slide number bottom-right */
+.slidev-page-number {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}

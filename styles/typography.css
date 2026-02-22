@@ -1,0 +1,73 @@
+/* Headings */
+.slidev-layout h1 {
+  color: var(--color-heading);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.slidev-layout h2 {
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.slidev-layout h3 {
+  color: var(--color-muted);
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+/* Body */
+.slidev-layout p {
+  font-size: 1.4rem;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.slidev-layout strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Lists */
+.slidev-layout ul, .slidev-layout ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.slidev-layout li {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.slidev-layout li::marker {
+  color: var(--color-accent);
+}
+
+/* Code */
+.slidev-layout code {
+  font-family: var(--font-mono);
+  background: var(--color-surface);
+  padding: 0.2em 0.5em;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+}
+
+/* Blockquote */
+.slidev-layout blockquote {
+  border-left: 4px solid var(--color-accent);
+  padding-left: 2rem;
+  margin: 1.5rem 0;
+  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+}

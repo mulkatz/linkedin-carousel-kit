@@ -1,0 +1,263 @@
+# Brand Style Guide — LinkedIn Slides
+
+> Dieses Dokument definiert den visuellen Standard für alle LinkedIn-Carousel-Slides.
+> Jeder Post muss diesen Guide einhalten, um ein konsistentes Brand-Erlebnis zu schaffen.
+
+---
+
+## Farbpalette
+
+### Primär
+
+| Name | Hex | Verwendung |
+|------|-----|------------|
+| **Sand 50** | `#FAF8F5` | Slide-Hintergrund |
+| **Sand 100** | `#F0EBE3` | Card-Hintergrund, Surface |
+| **Sand 200** | `#D4C5B0` | Borders, Trennlinien |
+| **Sand 800** | `#2C2416` | Body-Text |
+| **Sand 900** | `#1A1714` | Headlines |
+
+### Akzent
+
+| Name | Hex | Verwendung |
+|------|-----|------------|
+| **Copper** | `#C68B59` | Akzentfarbe — Bold-Text, Zahlen, Marker, CTAs, Akzentlinie |
+
+### Sekundär (sparsam einsetzen)
+
+| Name | Hex | Verwendung |
+|------|-----|------------|
+| **Sand 600** | `#6B5436` | Muted Text — Subtitles, Beschreibungen |
+| **Sand 300** | `#B8A48E` | Sehr dezenter Text — Hashtags, Fußzeilen |
+
+### Regeln
+
+- **Nie mehr als 3 Farben pro Slide** (Hintergrund + Text + Akzent)
+- **Copper nur für Akzente** — niemals als Hintergrund oder Fließtext
+- **Kein reines Schwarz** (`#000`) oder reines Weiß (`#FFF`) verwenden
+- **Kontrast sicherstellen** — Text auf Sand-50-Hintergrund muss lesbar sein
+
+---
+
+## Typografie
+
+### Schriften
+
+| Schrift | Gewichte | Verwendung |
+|---------|----------|------------|
+| **Playfair Display** | 400, 700 | Headlines (h1) — Serif für Eleganz und Autorität |
+| **DM Sans** | 300–700 | Body, Listen, UI-Elemente — Clean und modern |
+| **JetBrains Mono** | 400, 600 | Code-Snippets — Nur bei technischen Inhalten |
+
+### Größen (bezogen auf 1080x1080 Canvas)
+
+| Element | Größe | Gewicht |
+|---------|-------|---------|
+| **Cover-Headline** | 3.6rem | 700 (Bold) |
+| **Slide-Headline** | 3rem | 700 (Bold) |
+| **Statement (center)** | 2.6rem | 700 (Bold) |
+| **Body-Text** | 1.4rem | 400 (Regular) |
+| **Card-Title** | 1.25rem (text-xl) | 600 (Semibold) |
+| **Card-Description** | 1.125rem (text-lg) | 400 (Regular) |
+| **Große Zahlen** | 3.75rem (text-6xl) | 700 (Bold), Serif |
+| **Muted/Beschreibung** | 1.5rem (text-2xl) | 400 (Regular) |
+
+### Regeln
+
+- **Headlines immer Playfair Display** (Serif) — das ist das Brand-Erkennungsmerkmal
+- **Letter-spacing auf Headlines**: `-0.03em` (tight)
+- **Line-height auf Headlines**: `1.1–1.15`
+- **Body-Text immer DM Sans** — niemals Serif für Fließtext
+- **Keine ALL-CAPS** — passt nicht zur Tonalität
+
+---
+
+## Layout
+
+### Grundregeln
+
+- **Aspect Ratio**: 1:1 (1080 x 1080px) — Standard für LinkedIn-Carousels
+- **Padding**: 4.5rem (72px) auf allen Seiten
+- **Vertikale Zentrierung**: Content ist immer vertikal zentriert (nicht oben angeheftet)
+- **Akzentlinie**: Dezenter Copper-Gradient oben auf jeder Slide (3px)
+
+### Slide-Typen
+
+#### 1. Cover (Erste Slide)
+- Headline: bottom-aligned oder center
+- Subtitle: muted color
+- **Immer die stärkste Aussage** — muss zum Swipe motivieren
+
+#### 2. Content (Standard)
+- Headline + Body/Liste
+- Vertikal zentriert
+- Max. 5-6 Zeilen Content (weniger = besser)
+
+#### 3. Cards
+- Hintergrund: Sand 100 (`#F0EBE3`)
+- Border: Sand 200 (`#D4C5B0`), 1px
+- Border-Radius: `rounded-xl` (0.75rem)
+- Padding: `p-6`
+- Card-Titel in Copper, Beschreibung in Sand 600
+
+#### 4. Zahlen/Stats
+- Große Zahl: Serif (Playfair Display), text-6xl, Copper
+- Beschreibung: text-2xl, Sand 600
+- Flex-Layout: Zahl links, Text rechts (baseline-aligned)
+
+#### 5. Center/Statement
+- Text zentriert
+- Headline max. 90% Breite
+- Subtitle/Body in muted color
+- **Für Key Takeaways und starke Aussagen**
+
+#### 6. End (Letzte Slide)
+- Name + kurze Bio
+- CTA in Copper
+- Hashtags in Sand 300
+- Copper-Linie am unteren Rand (statt oberer Akzentlinie)
+- **Immer mit Follow-CTA**
+
+### Whitespace
+
+- **Whitespace ist ein Feature, kein Bug** — lieber weniger Content als vollgestopft
+- **Max. 6-7 Elemente pro Slide** (Headline + 5 Items)
+- **Mindestens 30% der Slide sollte leer sein**
+
+---
+
+## Komponenten
+
+### Cards
+
+```html
+<div class="bg-[#F0EBE3] rounded-xl p-6 border border-[#D4C5B0]">
+  <div class="text-[#C68B59] font-semibold text-xl mb-1">Titel</div>
+  <div class="text-[#6B5436] text-lg">Beschreibung</div>
+</div>
+```
+
+### Stat/Zahl
+
+```html
+<div class="flex items-baseline gap-5">
+  <span class="font-serif font-bold text-6xl text-[#C68B59]">42</span>
+  <span class="text-[#6B5436] text-2xl">Beschreibung</span>
+</div>
+```
+
+### Icon + Text
+
+```html
+<div class="flex items-center gap-5">
+  <span class="text-4xl">🔧</span>
+  <div>
+    <span class="font-semibold text-xl">Titel</span>
+    <span class="text-[#6B5436] text-lg">— Beschreibung</span>
+  </div>
+</div>
+```
+
+---
+
+## Mermaid-Diagramme
+
+### Wann einsetzen
+
+- **Flowcharts** für Prozesse, Entscheidungsbäume, Workflows
+- **Sequence Diagrams** für API-Flows, Interaktionen zwischen Systemen
+- **Mindmaps** für Konzept-Übersichten
+
+### Regeln
+
+- **Max. 1 Diagramm pro Slide** — Diagramm IST der Content
+- **Wenige Nodes** — max. 6-8 Nodes, sonst wird es auf 1080x1080 unleserlich
+- **Kurze Labels** — 2-3 Worte pro Node, keine Sätze
+- **Kein zusätzliches Styling nötig** — `setup/mermaid.ts` wendet Brand-Farben automatisch an
+- **Layout `center` bevorzugen** — Diagramme wirken besser zentriert
+
+### Syntax in Slides
+
+~~~markdown
+---
+layout: center
+---
+
+# Headline über dem Diagramm
+
+```mermaid
+graph LR
+  A[Input] --> B{Entscheidung}
+  B -->|Ja| C[Ergebnis A]
+  B -->|Nein| D[Ergebnis B]
+```
+~~~
+
+### Diagramm-Typen für LinkedIn
+
+| Typ | Syntax | Gut für |
+|-----|--------|---------|
+| Flowchart | `graph LR` / `graph TD` | Prozesse, Workflows |
+| Sequence | `sequenceDiagram` | API-Calls, Interaktionen |
+| Mindmap | `mindmap` | Übersichten, Konzepte |
+| Pie | `pie` | Verteilungen (sparsam) |
+
+---
+
+## Do's & Don'ts
+
+### Do's
+
+- Konsistente Farbpalette über alle Slides
+- Playfair Display für Headlines, DM Sans für Body
+- Copper-Akzent sparsam aber gezielt einsetzen
+- Viel Whitespace lassen
+- Jede Slide hat genau EINE Kernaussage
+- Cover-Slide muss zum Swipe motivieren
+- End-Slide mit klarem CTA
+
+### Don'ts
+
+- Kein reines Schwarz oder Weiß
+- Keine Stockfotos oder generischen Illustrationen
+- Keine Gradients auf Text
+- Keine Schatten auf Cards (Borders reichen)
+- Keine verschiedenen Akzentfarben pro Post — immer Copper
+- Nicht mehr als 2 Schriften pro Slide (Serif + Sans)
+- Keine überfüllten Slides — lieber eine Slide mehr
+
+---
+
+## Slide-Anzahl
+
+| Post-Typ | Empfohlene Slides |
+|-----------|-------------------|
+| Build Log | 6-8 |
+| Deep-Dive | 8-10 |
+| Honest Take | 5-7 |
+| Before/After | 6-8 |
+| Tool Review | 7-9 |
+
+**Regel**: Cover + Content-Slides + Takeaway + End = Gesamt
+**Max**: 10 Slides (LinkedIn-Limit: 20, aber kürzer = besser)
+
+---
+
+## Qualitätscheck (Playwright QA)
+
+Vor dem Export muss jede Slide visuell geprüft werden:
+
+- [ ] Hintergrundfarbe ist Sand 50 (`#FAF8F5`)
+- [ ] Headlines in Playfair Display (Serif)
+- [ ] Body in DM Sans
+- [ ] Copper-Akzent nur auf Bold/Zahlen/Marker
+- [ ] Content vertikal zentriert
+- [ ] Akzentlinie oben sichtbar
+- [ ] Keine Textüberlappung oder Overflow
+- [ ] Genug Whitespace (≥30% leer)
+- [ ] End-Slide hat Follow-CTA
+- [ ] Lesbar auf Mobile (Schrift groß genug)
+
+---
+
+*Letzte Aktualisierung: 2026-02-17*
