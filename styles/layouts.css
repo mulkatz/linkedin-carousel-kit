@@ -1,11 +1,11 @@
 /* Cover: Big statement, bottom-aligned */
 .slidev-layout.cover {
   justify-content: flex-end !important;
-  padding-bottom: 5rem !important;
+  padding-bottom: 5.5rem !important;
 }
 
 .slidev-layout.cover h1 {
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   line-height: 1.1;
   margin-bottom: 1rem;
 }

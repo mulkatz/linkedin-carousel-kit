@@ -1,31 +1,32 @@
 ---
 theme: default
 layout: cover
-title: Hi, I'm Franz
+title: Your Carousel Title
 author: Franz
 colorSchema: light
 aspectRatio: 1/1
 canvasWidth: 1080
-exportFilename: 0002-hi-im-franz
+exportFilename: your-carousel-title
+mdc: true
+defaults:
+  layout: center
 fonts:
   sans: DM Sans
   serif: Playfair Display
   mono: JetBrains Mono
 ---
 
-# I've built 20+ spare time projects.
+# Your bold cover statement goes here.
 
-None of them made me rich. I'm still building.
+A short subtitle that hooks the reader.
 
 ---
-layout: center
----
 
-# I'm good at making things.
+# Slide two — your first key point.
 
-Marketing? Let's call it a **growth area.**
+Explain it in **one or two sentences.**
 
-So I'm opening the door. Building in public, right here.
+Keep it scannable.
 
 ---
 layout: end
@@ -33,100 +34,6 @@ layout: end
 
 # Franz
 
-First LinkedIn post ever.
+Your closing thought or takeaway.
 
-<div class="mt-6 text-[#6B5436] text-xl">If it flops, at least I have 20+ projects to cope with.</div>
-
-<div class="mt-6 text-[#C68B59] text-xl">Follow along. It might get interesting.</div>
-
-<style>
-  :root {
-    --slidev-th-color: #FAF8F5;
-  }
-
-  .slidev-layout {
-    background-color: #FAF8F5 !important;
-    color: #2C2416 !important;
-    font-family: 'DM Sans', system-ui, sans-serif !important;
-    font-size: 1.4rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    padding: 4.5rem !important;
-    position: relative !important;
-  }
-
-  .slidev-layout::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 4.5rem;
-    right: 4.5rem;
-    height: 3px;
-    background: linear-gradient(90deg, #C68B59, transparent);
-  }
-
-  .slidev-layout h1 {
-    color: #1A1714 !important;
-    font-family: 'Playfair Display', serif !important;
-    font-weight: 700 !important;
-    font-size: 3rem !important;
-    letter-spacing: -0.03em !important;
-    line-height: 1.15 !important;
-    margin-bottom: 1.25rem !important;
-  }
-
-  .slidev-layout p {
-    font-size: 1.4rem !important;
-    line-height: 1.65 !important;
-  }
-
-  .slidev-layout strong {
-    color: #C68B59 !important;
-    font-weight: 600 !important;
-  }
-
-  .slidev-layout.cover {
-    justify-content: flex-end !important;
-    padding-bottom: 5.5rem !important;
-  }
-
-  .slidev-layout.cover h1 {
-    font-size: 3.6rem !important;
-    line-height: 1.1 !important;
-  }
-
-  .slidev-layout.cover p {
-    color: #6B5436 !important;
-    font-size: 1.5rem !important;
-  }
-
-  .slidev-layout.center {
-    align-items: center !important;
-    text-align: center !important;
-    padding: 5rem !important;
-  }
-
-  .slidev-layout.center h1 {
-    font-size: 2.6rem !important;
-    max-width: 90% !important;
-    line-height: 1.3 !important;
-  }
-
-  .slidev-layout.end {
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  .slidev-layout.end::before { display: none; }
-
-  .slidev-layout.end::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 4.5rem;
-    right: 4.5rem;
-    height: 4px;
-    background: #C68B59;
-  }
-</style>
+<div class="mt-6" style="color: var(--color-accent); font-size: 1.25rem;">Follow along for more.</div>

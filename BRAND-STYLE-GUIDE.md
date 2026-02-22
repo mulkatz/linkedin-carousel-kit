@@ -9,26 +9,26 @@
 
 ### Primär
 
-| Name | Hex | Verwendung |
-|------|-----|------------|
-| **Sand 50** | `#FAF8F5` | Slide-Hintergrund |
-| **Sand 100** | `#F0EBE3` | Card-Hintergrund, Surface |
-| **Sand 200** | `#D4C5B0` | Borders, Trennlinien |
-| **Sand 800** | `#2C2416` | Body-Text |
-| **Sand 900** | `#1A1714` | Headlines |
+| Name | Hex | CSS Variable | Verwendung |
+|------|-----|-------------|------------|
+| **Sand 50** | `#FAF8F5` | `var(--color-bg)` | Slide-Hintergrund |
+| **Sand 100** | `#F0EBE3` | `var(--color-surface)` | Card-Hintergrund, Surface |
+| **Sand 200** | `#D4C5B0` | `var(--color-border)` | Borders, Trennlinien |
+| **Sand 800** | `#2C2416` | `var(--color-text)` | Body-Text |
+| **Sand 900** | `#1A1714` | `var(--color-heading)` | Headlines |
 
 ### Akzent
 
-| Name | Hex | Verwendung |
-|------|-----|------------|
-| **Copper** | `#C68B59` | Akzentfarbe — Bold-Text, Zahlen, Marker, CTAs, Akzentlinie |
+| Name | Hex | CSS Variable | Verwendung |
+|------|-----|-------------|------------|
+| **Copper** | `#C68B59` | `var(--color-accent)` | Akzentfarbe — Bold-Text, Zahlen, Marker, CTAs, Akzentlinie |
 
 ### Sekundär (sparsam einsetzen)
 
-| Name | Hex | Verwendung |
-|------|-----|------------|
-| **Sand 600** | `#6B5436` | Muted Text — Subtitles, Beschreibungen |
-| **Sand 300** | `#B8A48E` | Sehr dezenter Text — Hashtags, Fußzeilen |
+| Name | Hex | CSS Variable | Verwendung |
+|------|-----|-------------|------------|
+| **Sand 600** | `#6B5436` | `var(--color-muted)` | Muted Text — Subtitles, Beschreibungen |
+| **Sand 300** | `#B8A48E` | — | Sehr dezenter Text — Hashtags, Fußzeilen |
 
 ### Regeln
 
@@ -36,6 +36,7 @@
 - **Copper nur für Akzente** — niemals als Hintergrund oder Fließtext
 - **Kein reines Schwarz** (`#000`) oder reines Weiß (`#FFF`) verwenden
 - **Kontrast sicherstellen** — Text auf Sand-50-Hintergrund muss lesbar sein
+- **Immer CSS-Variablen verwenden** — niemals Hex-Codes direkt in Slides
 
 ---
 
@@ -57,10 +58,10 @@
 | **Slide-Headline** | 3rem | 700 (Bold) |
 | **Statement (center)** | 2.6rem | 700 (Bold) |
 | **Body-Text** | 1.4rem | 400 (Regular) |
-| **Card-Title** | 1.25rem (text-xl) | 600 (Semibold) |
-| **Card-Description** | 1.125rem (text-lg) | 400 (Regular) |
-| **Große Zahlen** | 3.75rem (text-6xl) | 700 (Bold), Serif |
-| **Muted/Beschreibung** | 1.5rem (text-2xl) | 400 (Regular) |
+| **Card-Title** | 1.25rem | 600 (Semibold) |
+| **Card-Description** | 1.125rem | 400 (Regular) |
+| **Große Zahlen** | 3.75rem | 700 (Bold), Serif |
+| **Muted/Beschreibung** | 1.5rem | 400 (Regular) |
 
 ### Regeln
 
@@ -84,7 +85,7 @@
 ### Slide-Typen
 
 #### 1. Cover (Erste Slide)
-- Headline: bottom-aligned oder center
+- Headline: bottom-aligned
 - Subtitle: muted color
 - **Immer die stärkste Aussage** — muss zum Swipe motivieren
 
@@ -94,16 +95,13 @@
 - Max. 5-6 Zeilen Content (weniger = besser)
 
 #### 3. Cards
-- Hintergrund: Sand 100 (`#F0EBE3`)
-- Border: Sand 200 (`#D4C5B0`), 1px
-- Border-Radius: `rounded-xl` (0.75rem)
-- Padding: `p-6`
+- Verwende `<Card>` und `<CardGrid>` Komponenten (siehe Komponenten-Sektion)
 - Card-Titel in Copper, Beschreibung in Sand 600
 
 #### 4. Zahlen/Stats
-- Große Zahl: Serif (Playfair Display), text-6xl, Copper
-- Beschreibung: text-2xl, Sand 600
-- Flex-Layout: Zahl links, Text rechts (baseline-aligned)
+- Verwende `<Stat>` Komponente (siehe Komponenten-Sektion)
+- Große Zahl: Serif (Playfair Display), Copper
+- Beschreibung: Sand 600
 
 #### 5. Center/Statement
 - Text zentriert
@@ -128,35 +126,104 @@
 
 ## Komponenten
 
-### Cards
+### Card
+
+Für Step-by-Step-Listen, Feature-Listen, Konzepte:
 
 ```html
-<div class="bg-[#F0EBE3] rounded-xl p-6 border border-[#D4C5B0]">
-  <div class="text-[#C68B59] font-semibold text-xl mb-1">Titel</div>
-  <div class="text-[#6B5436] text-lg">Beschreibung</div>
-</div>
+<Card title="Titel" description="Beschreibung" />
 ```
 
-### Stat/Zahl
+Mit eigenem Content im Slot:
 
 ```html
-<div class="flex items-baseline gap-5">
-  <span class="font-serif font-bold text-6xl text-[#C68B59]">42</span>
-  <span class="text-[#6B5436] text-2xl">Beschreibung</span>
-</div>
+<Card title="Titel">
+  <p>Beliebiger Content im Slot</p>
+</Card>
 ```
 
-### Icon + Text
+### CardGrid
+
+Wrapper für mehrere Cards. `cols` kontrolliert das Layout (1 oder 2 Spalten):
 
 ```html
-<div class="flex items-center gap-5">
-  <span class="text-4xl">🔧</span>
-  <div>
-    <span class="font-semibold text-xl">Titel</span>
-    <span class="text-[#6B5436] text-lg">— Beschreibung</span>
-  </div>
-</div>
+<CardGrid :cols="2">
+  <Card title="Erster Punkt" description="Beschreibung" />
+  <Card title="Zweiter Punkt" description="Beschreibung" />
+</CardGrid>
 ```
+
+### Stat
+
+Für Zahlen und Metriken:
+
+```html
+<Stat value="42" label="Projekte gebaut" />
+```
+
+### IconText
+
+Für Tool-Listen, Stack-Übersichten:
+
+```html
+<IconText icon="🔧" title="Tool Name" description="Was es tut" />
+```
+
+---
+
+## MDC Inline-Syntax
+
+MDC (Markdown Components) erlaubt Inline-Styling direkt im Markdown. Aktiviert über `mdc: true` im Headmatter.
+
+### Syntax
+
+```markdown
+[hervorgehobener Text]{style="color: var(--color-accent)"}
+```
+
+### Regeln
+
+- **Nur für einzelne Wörter oder kurze Phrasen** — nicht für ganze Absätze
+- **Immer CSS-Variablen verwenden** — niemals Hex-Codes
+- **Sparsam einsetzen** — max. 1-2 pro Slide, sonst wird es unruhig
+- **Bevorzuge Markdown `**bold**`** — MDC nur wenn Bold nicht ausreicht
+
+### Beispiele
+
+```markdown
+Das ist ein [wichtiger Punkt]{style="color: var(--color-accent); font-weight: 600"} im Text.
+
+Ergebnis: [+340%]{style="color: var(--color-accent); font-family: var(--font-serif); font-size: 1.8rem"}
+```
+
+---
+
+## Handgezeichnete Annotationen (v-mark)
+
+v-mark erzeugt Rough-Notation-Annotationen (Unterstreichungen, Kreise, Hervorhebungen) die aussehen wie handgezeichnet. Perfekt für Betonung auf LinkedIn-Slides.
+
+### Syntax
+
+```markdown
+Wir haben das <v-mark color="var(--color-accent)" type="underline" at="true">komplett neu gedacht.</v-mark>
+```
+
+### Typen
+
+| Type | Effekt | Gut für |
+|------|--------|---------|
+| `underline` | Unterstreichung | Einzelne Wörter betonen |
+| `circle` | Einkreisen | Zahlen, Schlüsselbegriffe |
+| `highlight` | Hintergrund-Marker | Kurze Phrasen hervorheben |
+| `strike-through` | Durchgestrichen | Vorher/Nachher-Vergleiche |
+| `bracket` | Klammer | Randbemerkungen |
+
+### Regeln
+
+- **Immer Copper als Farbe** — `color="var(--color-accent)"`
+- **Max. 1-2 pro Slide** — sonst verliert der Effekt seine Wirkung
+- **`at="true"` für statische Exports** — ohne `at` wird die Animation nur im Dev-Modus sichtbar, nicht im PDF/PNG-Export
+- **Kurze Texte** — v-mark wirkt am besten auf 1-3 Wörter
 
 ---
 
@@ -215,6 +282,8 @@ graph LR
 - Jede Slide hat genau EINE Kernaussage
 - Cover-Slide muss zum Swipe motivieren
 - End-Slide mit klarem CTA
+- CSS-Variablen statt Hex-Codes in Slides verwenden
+- Vue-Komponenten (`<Card>`, `<Stat>`, `<IconText>`) statt rohem HTML
 
 ### Don'ts
 
@@ -225,6 +294,8 @@ graph LR
 - Keine verschiedenen Akzentfarben pro Post — immer Copper
 - Nicht mehr als 2 Schriften pro Slide (Serif + Sans)
 - Keine überfüllten Slides — lieber eine Slide mehr
+- Keine `<style>`-Blöcke in Slide-Dateien — alles liegt in `styles/`
+- Keine Hex-Codes direkt in Slides — CSS-Variablen verwenden
 
 ---
 
@@ -243,7 +314,7 @@ graph LR
 
 ---
 
-## Qualitätscheck (Playwright QA)
+## Qualitätscheck (vor Export)
 
 Vor dem Export muss jede Slide visuell geprüft werden:
 
@@ -252,12 +323,15 @@ Vor dem Export muss jede Slide visuell geprüft werden:
 - [ ] Body in DM Sans
 - [ ] Copper-Akzent nur auf Bold/Zahlen/Marker
 - [ ] Content vertikal zentriert
-- [ ] Akzentlinie oben sichtbar
+- [ ] Akzentlinie oben sichtbar (außer End-Slide)
 - [ ] Keine Textüberlappung oder Overflow
 - [ ] Genug Whitespace (≥30% leer)
 - [ ] End-Slide hat Follow-CTA
 - [ ] Lesbar auf Mobile (Schrift groß genug)
+- [ ] Slide-Counter sichtbar auf Content-Slides, versteckt auf Cover/End
+- [ ] Keine Hex-Codes in Slide-Dateien (nur CSS-Variablen)
+- [ ] v-mark Annotationen haben `at="true"` für Export
 
 ---
 
-*Letzte Aktualisierung: 2026-02-17*
+*Letzte Aktualisierung: 2026-02-22*

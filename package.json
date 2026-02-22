@@ -6,8 +6,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "slidev --open",
-    "export": "slidev export --output carousel",
-    "build": "slidev build"
+    "export": "slidev export",
+    "export:png": "slidev export --format png --scale 2",
+    "export:pptx": "slidev export --format pptx",
+    "build": "slidev build",
+    "setup": "npx --yes playwright install chromium"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@slidev/cli": "^52.12.0",

@@ -23,6 +23,7 @@
   flex-direction: column !important;
   justify-content: center !important;
   padding: 4.5rem !important;
+  position: relative;
 }
 
 /* Subtle decorative accent line at top of every slide */
