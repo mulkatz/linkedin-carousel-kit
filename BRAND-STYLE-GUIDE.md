@@ -328,7 +328,6 @@ Vor dem Export muss jede Slide visuell geprüft werden:
 - [ ] Genug Whitespace (≥30% leer)
 - [ ] End-Slide hat Follow-CTA
 - [ ] Lesbar auf Mobile (Schrift groß genug)
-- [ ] Slide-Counter sichtbar auf Content-Slides, versteckt auf Cover/End
 - [ ] Keine Hex-Codes in Slide-Dateien (nur CSS-Variablen)
 - [ ] v-mark Annotationen haben `at="true"` für Export
 

@@ -23,7 +23,6 @@ inspired by earthy tones and clean typography.
 - **Pre-built slide types** — Cover, Content, Center/Statement, End/CTA
 - **Vue components** — `<Card>`, `<Stat>`, `<IconText>`, `<CardGrid>` with brand styling
 - **Mermaid diagrams** — natively supported, automatically branded
-- **Slide counter** — automatic, hidden on cover and end slides
 - **Multi-format export** — PDF, PNG (2x retina), PPTX
 
 ## Quick start
@@ -202,7 +201,6 @@ Create Vue components in `layouts/` following the [Slidev custom layouts](https:
 linkedin-carousel-kit/
 ├── slides.md              <- Your slide content (edit this)
 ├── template.md            <- Slide template for new posts
-├── global-bottom.vue      <- Slide counter (auto-hidden on cover/end)
 ├── index.html             <- Google Fonts loading
 ├── uno.config.ts          <- UnoCSS theme (colors, fonts, shortcuts)
 ├── setup/mermaid.ts       <- Mermaid brand theming (auto-loaded by Slidev)

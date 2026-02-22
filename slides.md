@@ -36,4 +36,4 @@ layout: end
 
 Your closing thought or takeaway.
 
-<div class="mt-6" style="color: var(--color-accent); font-size: 1.25rem;">Follow along for more.</div>
+<div style="color: var(--color-accent); font-size: 1.25rem; margin-top: 1.5rem;">Follow along for more.</div>
