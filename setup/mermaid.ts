@@ -23,9 +23,9 @@ export default defineMermaidSetup(() => ({
     textColor: '#2C2416',          // Sand 800
     titleColor: '#1A1714',         // Sand 900
 
-    // Typography
+    // Typography — larger for 1080x1080 canvas readability
     fontFamily: 'DM Sans, system-ui, sans-serif',
-    fontSize: '16px',
+    fontSize: '24px',
 
     // Nodes
     nodeBkg: '#F0EBE3',
@@ -58,5 +58,31 @@ export default defineMermaidSetup(() => ({
     loopTextColor: '#6B5436',
     activationBorderColor: '#C68B59',
     activationBkgColor: '#F0EBE3',
+
+    // Mindmap — override default colors with Sand/Copper palette
+    cScale0: '#F0EBE3',   // Sand 100
+    cScale1: '#F0EBE3',
+    cScale2: '#F0EBE3',
+    cScale3: '#F0EBE3',
+    cScale4: '#F0EBE3',
+    cScale5: '#F0EBE3',
+    cScale6: '#F0EBE3',
+    cScale7: '#F0EBE3',
+    cScale8: '#F0EBE3',
+    cScale9: '#F0EBE3',
+    cScale10: '#F0EBE3',
+    cScale11: '#F0EBE3',
+    cScaleLabel0: '#2C2416',  // Sand 800
+    cScaleLabel1: '#2C2416',
+    cScaleLabel2: '#2C2416',
+    cScaleLabel3: '#2C2416',
+    cScaleLabel4: '#2C2416',
+    cScaleLabel5: '#2C2416',
+    cScaleLabel6: '#2C2416',
+    cScaleLabel7: '#2C2416',
+    cScaleLabel8: '#2C2416',
+    cScaleLabel9: '#2C2416',
+    cScaleLabel10: '#2C2416',
+    cScaleLabel11: '#2C2416',
   },
 }))

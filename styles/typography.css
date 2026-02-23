@@ -71,3 +71,11 @@
   font-style: italic;
   font-size: 1.5rem;
 }
+
+/* Mermaid diagrams — scale container to fill slide width */
+.slidev-layout .mermaid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}

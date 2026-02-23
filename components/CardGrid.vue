@@ -23,5 +23,6 @@ withDefaults(defineProps<{
 .card-grid--2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: stretch;
 }
 </style>
