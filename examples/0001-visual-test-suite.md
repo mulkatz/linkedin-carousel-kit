@@ -75,10 +75,10 @@ The best architecture is the one that disappears — you stop thinking about it 
 
 # My daily toolkit.
 
-<IconText icon="⚡" title="Vite" description="Dev server and bundler" />
-<IconText icon="🦕" title="Hono" description="Lightweight HTTP framework" />
-<IconText icon="🗄️" title="Drizzle" description="Type-safe SQL that feels right" />
-<IconText icon="🎨" title="UnoCSS" description="Atomic CSS, instant HMR" />
+<Feature icon="⚡" title="Vite" description="Dev server and bundler" />
+<Feature icon="🦕" title="Hono" description="Lightweight HTTP framework" />
+<Feature icon="🗄️" title="Drizzle" description="Type-safe SQL that feels right" />
+<Feature icon="🎨" title="UnoCSS" description="Atomic CSS, instant HMR" />
 
 ---
 

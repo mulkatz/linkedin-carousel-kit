@@ -16,13 +16,27 @@ inspired by earthy tones and clean typography.
 
 ---
 
+## Preview
+
+<p align="center">
+  <img src="docs/preview-cover.png" width="400" alt="Cover slide" />
+  <img src="docs/preview-cards.png" width="400" alt="Card components" />
+</p>
+<p align="center">
+  <img src="docs/preview-stats.png" width="400" alt="Stat components" />
+  <img src="docs/preview-mermaid.png" width="400" alt="Mermaid diagram" />
+</p>
+
+---
+
 ## What you get
 
 - **1:1 aspect ratio** (1080x1080) optimized for LinkedIn carousels
 - **Design system** with Playfair Display headlines, DM Sans body text, and copper accents
 - **Pre-built slide types** — Cover, Content, Center/Statement, End/CTA
-- **Vue components** — `<Card>`, `<Stat>`, `<IconText>`, `<CardGrid>` with brand styling
+- **Vue components** — `<Card>`, `<Stat>`, `<Feature>`, `<CardGrid>`, `<Illustration>` with brand styling
 - **Mermaid diagrams** — natively supported, automatically branded
+- **MDC inline syntax** — highlight [specific words]{style="color"} in your text
 - **Multi-format export** — PDF, PNG (2x retina), PPTX
 
 ## Quick start
@@ -102,10 +116,10 @@ Reusable Vue components with brand styling. No hardcoded colors — everything u
 <Stat value="42" label="things accomplished" />
 ```
 
-**IconText** for tool/stack lists:
+**Feature** for tool/stack lists:
 
 ```html
-<IconText icon="🔧" title="Tool Name" description="What it does" />
+<Feature icon="🔧" title="Tool Name" description="What it does" />
 ```
 
 **Illustration** for images (from `public/images/`):
@@ -157,6 +171,20 @@ The output filename is controlled by `exportFilename` in your slide's frontmatte
 
 > **Note**: Export requires Playwright. Run `npm run setup` once after install to download the Chromium browser.
 
+## Examples
+
+The `examples/` directory contains complete carousels for reference:
+
+| File | Description |
+|------|-------------|
+| `0001-visual-test-suite.md` | All components, layouts, and features in one deck |
+| `0002-hi-im-franz.md` | Minimal 3-slide carousel |
+| `0003-diagram-quality-test.md` | Mermaid diagram showcase |
+
+To preview an example, copy it to `slides.md` and run `npm run dev`.
+
+> **Note**: Examples must be run from the project root (as `slides.md`) because Slidev resolves components relative to the entry file.
+
 ## Design system
 
 ### Colors
@@ -166,10 +194,11 @@ The output filename is controlled by `exportFilename` in your slide's frontmatte
 | Sand 50 | `#FAF8F5` | `--color-bg` | Slide background |
 | Sand 100 | `#F0EBE3` | `--color-surface` | Card background |
 | Sand 200 | `#D4C5B0` | `--color-border` | Borders |
+| Sand 300 | `#B8A48E` | `--color-subtle` | Subtle text — hashtags, footers |
+| Sand 600 | `#6B5436` | `--color-muted` | Muted text — descriptions |
 | Sand 800 | `#2C2416` | `--color-text` | Body text |
 | Sand 900 | `#1A1714` | `--color-heading` | Headlines |
 | Copper | `#C68B59` | `--color-accent` | Accent — bold text, numbers, CTAs |
-| Sand 300 | `#B8A48E` | `--color-subtle` | Subtle text — hashtags, footers |
 
 ### Typography
 
@@ -212,6 +241,7 @@ linkedin-carousel-kit/
 ├── template.md            <- Slide template for new posts
 ├── index.html             <- Google Fonts loading
 ├── uno.config.ts          <- UnoCSS theme (colors, fonts, shortcuts)
+├── .nvmrc                 <- Node version (22)
 ├── setup/mermaid.ts       <- Mermaid brand theming (auto-loaded by Slidev)
 ├── styles/                <- Global CSS (variables, typography, layouts)
 │   ├── base.css           <- CSS variables, slide base styles
@@ -222,7 +252,7 @@ linkedin-carousel-kit/
 │   ├── Card.vue           <- Card with title + description
 │   ├── CardGrid.vue       <- Grid wrapper for cards (1 or 2 columns)
 │   ├── Stat.vue           <- Big number + label
-│   ├── IconText.vue       <- Emoji/icon + title + description
+│   ├── Feature.vue        <- Emoji/icon + title + description
 │   └── Illustration.vue   <- Image with caption, rounded corners, shadow
 ├── layouts/               <- Custom layout overrides
 │   ├── cover.vue          <- Clean cover (no my-auto wrapper)
@@ -231,6 +261,7 @@ linkedin-carousel-kit/
 │   ├── section.vue        <- Clean section (no grid wrapper)
 │   └── end.vue            <- Clean end (no bg-black/text-white)
 ├── examples/              <- Example carousels for reference
+├── docs/                  <- Preview images for README
 ├── public/                <- Static assets (images, etc.)
 ├── BRAND-STYLE-GUIDE.md   <- Full design specification
 └── package.json

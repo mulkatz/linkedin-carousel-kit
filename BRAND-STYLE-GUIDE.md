@@ -161,12 +161,12 @@ Für Zahlen und Metriken:
 <Stat value="42" label="Projekte gebaut" />
 ```
 
-### IconText
+### Feature
 
 Für Tool-Listen, Stack-Übersichten:
 
 ```html
-<IconText icon="🔧" title="Tool Name" description="Was es tut" />
+<Feature icon="🔧" title="Tool Name" description="Was es tut" />
 ```
 
 ### Illustration
@@ -309,7 +309,7 @@ graph LR
 - Cover-Slide muss zum Swipe motivieren
 - End-Slide mit klarem CTA
 - CSS-Variablen statt Hex-Codes in Slides verwenden
-- Vue-Komponenten (`<Card>`, `<Stat>`, `<IconText>`) statt rohem HTML
+- Vue-Komponenten (`<Card>`, `<Stat>`, `<Feature>`) statt rohem HTML
 
 ### Don'ts
 
