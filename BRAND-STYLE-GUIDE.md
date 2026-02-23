@@ -169,6 +169,32 @@ Für Tool-Listen, Stack-Übersichten:
 <IconText icon="🔧" title="Tool Name" description="Was es tut" />
 ```
 
+### Illustration
+
+Für Bilder und Illustrationen (z.B. aus `public/images/`):
+
+```html
+<Illustration src="/images/my-illustration.png" alt="Beschreibung" caption="Optionale Bildunterschrift" />
+```
+
+Alle Props:
+
+| Prop | Typ | Default | Beschreibung |
+|------|-----|---------|-------------|
+| `src` | string | (required) | Bildpfad (relativ zu `public/`) |
+| `alt` | string | `''` | Alt-Text |
+| `caption` | string | — | Optionale Bildunterschrift (kursiv, Sand 600) |
+| `rounded` | boolean | `true` | Abgerundete Ecken |
+| `shadow` | boolean | `true` | Dezenter Schatten |
+| `maxWidth` | string | `'100%'` | Maximale Breite (z.B. `'80%'`, `'600px'`) |
+
+### Regeln für Illustrationen
+
+- **Bilder in `public/images/` ablegen** — niemals externe URLs
+- **Konsistenter Stil** — alle Illustrationen eines Posts im gleichen Stil
+- **Max 1 Illustration pro Slide** — das Bild IST der Content
+- **Caption nur wenn nötig** — wenn das Bild für sich spricht, weglassen
+
 ---
 
 ## MDC Inline-Syntax

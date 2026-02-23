@@ -108,6 +108,14 @@ Reusable Vue components with brand styling. No hardcoded colors — everything u
 <IconText icon="🔧" title="Tool Name" description="What it does" />
 ```
 
+**Illustration** for images (from `public/images/`):
+
+```html
+<Illustration src="/images/diagram.png" alt="Architecture overview" caption="Optional caption" />
+```
+
+Props: `src` (required), `alt`, `caption`, `rounded` (default: true), `shadow` (default: true), `maxWidth` (default: '100%').
+
 ### MDC inline syntax
 
 With `mdc: true` in frontmatter (enabled by default in the template), you can style inline text:
@@ -213,7 +221,8 @@ linkedin-carousel-kit/
 │   ├── Card.vue           <- Card with title + description
 │   ├── CardGrid.vue       <- Grid wrapper for cards (1 or 2 columns)
 │   ├── Stat.vue           <- Big number + label
-│   └── IconText.vue       <- Emoji/icon + title + description
+│   ├── IconText.vue       <- Emoji/icon + title + description
+│   └── Illustration.vue   <- Image with caption, rounded corners, shadow
 ├── layouts/               <- Custom layout overrides
 │   ├── cover.vue          <- Clean cover (no my-auto wrapper)
 │   ├── center.vue         <- Clean center (no grid/place-content-center)

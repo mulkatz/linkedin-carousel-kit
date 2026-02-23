@@ -39,6 +39,14 @@ graph LR
 ```
 
 ---
+
+<!-- Optional: Illustration-Slide — Bild aus public/images/ -->
+
+# [Illustration-Headline]
+
+<Illustration src="/images/[bild].png" alt="[Beschreibung]" caption="[Optionale Unterschrift]" />
+
+---
 layout: end
 ---
 
