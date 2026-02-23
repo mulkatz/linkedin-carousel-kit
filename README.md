@@ -169,6 +169,7 @@ The output filename is controlled by `exportFilename` in your slide's frontmatte
 | Sand 800 | `#2C2416` | `--color-text` | Body text |
 | Sand 900 | `#1A1714` | `--color-heading` | Headlines |
 | Copper | `#C68B59` | `--color-accent` | Accent — bold text, numbers, CTAs |
+| Sand 300 | `#B8A48E` | `--color-subtle` | Subtle text — hashtags, footers |
 
 ### Typography
 

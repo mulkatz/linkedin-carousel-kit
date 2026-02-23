@@ -28,7 +28,7 @@
 | Name | Hex | CSS Variable | Verwendung |
 |------|-----|-------------|------------|
 | **Sand 600** | `#6B5436` | `var(--color-muted)` | Muted Text — Subtitles, Beschreibungen |
-| **Sand 300** | `#B8A48E` | — | Sehr dezenter Text — Hashtags, Fußzeilen |
+| **Sand 300** | `#B8A48E` | `var(--color-subtle)` | Sehr dezenter Text — Hashtags, Fußzeilen |
 
 ### Regeln
 

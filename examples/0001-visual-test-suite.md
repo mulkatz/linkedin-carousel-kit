@@ -137,4 +137,4 @@ Build less. Ship more. That's the whole philosophy.
 
 <div class="mt-6" style="color: var(--color-accent); font-size: 1.25rem;">Follow along for more.</div>
 
-<div style="color: #B8A48E; font-size: 0.95rem; margin-top: 2rem;">#buildinpublic #webdev #architecture</div>
+<div style="color: var(--color-subtle); font-size: 0.95rem; margin-top: 2rem;">#buildinpublic #webdev #architecture</div>
